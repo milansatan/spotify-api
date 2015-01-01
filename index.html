@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- JS -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/spotify.js"></script>
+
+	<title>Spotify API</title>
+</head>
+<body>
+	<div id="container">
+		<div id="top">
+			<img src="image/spotify_icon.png" width="125" height="128">
+			<h1><span id="title">Spotify</span> WebAPI Artist Playlist</h1>
+			<br>
+			<h2>By John Asabushi</h2>
+		</div>
+		<div id="bottom">
+			<div id="wrap">
+				<h2>Search for an Artist</h2>
+					<form id="search-form">
+						<input type="text" id="query" value="" class="form-control" placeholder="Artist Name">
+						<input type="submit" id="search" class="btn btn-primary" value="Search">
+					</form>
+				<div id="results"></div> 
+			</div>
+		</div>
+	</div>
+
+	<script id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+</script>
+
+	<footer>
+		Powered by <a href="http://the.echonest.com/">The Echo Nest</a> and <a href="https://www.spotify.com/us/">Spotify</a>
+	</footer>
+
+
+</body>
+</html>
