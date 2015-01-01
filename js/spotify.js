@@ -1,3 +1,5 @@
+//<![CDATA[ 
+window.onload=function(){
 // find template and compile it
 var templateSource = document.getElementById('results-template').innerHTML,
     template = Handlebars.compile(templateSource),
@@ -55,3 +57,5 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
     e.preventDefault();
     searchAlbums(document.getElementById('query').value);
 }, false);
+}//]]>  
+
